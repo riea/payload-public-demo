@@ -1,5 +1,5 @@
 'use client'
-// import { useLivePreview } from '@payloadcms/live-preview-react'
+import { useLivePreview } from '@payloadcms/live-preview-react'
 import React from 'react'
 
 import type { Comment, Post } from '../../../../payload/payload-types'
@@ -12,11 +12,11 @@ export const PostClient: React.FC<{ comments: Comment[]; post: Post }> = ({
   comments,
   post: initialPost,
 }) => {
-  // const { data } = useLivePreview<Post>({
-  //   depth: 1,
-  //   initialData: initialPost,
-  //   serverURL: process.env.NEXT_PUBLIC_SERVER_URL,
-  // })
+  const { data } = useLivePreview<Post>({
+    depth: 1,
+    initialData: initialPost,
+    serverURL: process.env.NEXT_PUBLIC_SERVER_URL,
+  })
 
   return (
     <React.Fragment>

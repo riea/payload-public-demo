@@ -8,7 +8,7 @@ export const Media: CollectionConfig = {
     create: () => false,
     delete: () => false,
     read: () => true,
-    update: () => false,
+    update: () => true,
   },
   admin: {
     description: 'Creating, updating, and deleting media is disabled for this demo.',
@@ -29,6 +29,32 @@ export const Media: CollectionConfig = {
   ],
   slug: 'media',
   upload: {
+    adminThumbnail: 'thumbnail',
+    imageSizes: [
+      {
+        name: 'thumbnail',
+        height: 300,
+        position: 'centre',
+        width: 400,
+      },
+      {
+        name: 'card',
+        height: 1024,
+        position: 'centre',
+        width: 768,
+      },
+      {
+        name: 'tablet',
+        width: 1024,
+        // By specifying `undefined` or leaving a height undefined,
+        // the image will be sized to a certain width,
+        // but it will retain its original aspect ratio
+        // and calculate a height automatically.
+        height: undefined,
+        position: 'centre',
+      },
+    ],
+    mimeTypes: ['image/*'],
     staticDir: path.resolve(__dirname, '../../../media'),
   },
 }

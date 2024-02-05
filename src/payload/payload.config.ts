@@ -43,6 +43,18 @@ export default buildConfig({
       beforeDashboard: [BeforeDashboard],
       beforeLogin: [BeforeLogin],
     },
+    livePreview: {
+      breakpoints: [
+        {
+          name: 'mobile',
+          height: 667,
+          label: 'Mobile',
+          width: 375,
+        },
+      ],
+      collections: ['pages', 'posts'], // The collections to enable Live Preview on (globals are also possible)
+      url: 'http://localhost:3000', // The URL to your front-end, this can also be a function (see below)
+    },
     // livePreview: {
     //   breakpoints: [
     //     {
